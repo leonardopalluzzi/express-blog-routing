@@ -2,9 +2,14 @@ const express = require('express');
 const router = express.Router();
 const data = require('../posts');
 
+//middleware
+router.use(express.static('public'));
+
 //index
 router.get('/', (req, res) => {
-    res.send('Posts list');
+    //res.send('Posts list');
+
+    res.json(data);
 });
 
 //show
