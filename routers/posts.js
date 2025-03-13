@@ -8,14 +8,13 @@ router.use(express.static('public'));
 //index
 router.get('/', (req, res) => {
     //res.send('Posts list');
-
     res.json(data);
 });
 
 //show
 router.get('/:slug', (req, res) => {
     //res.send(`Showing post: ${req.params.slug}`);
-    const post = data.filter(post => post.slug == req.params.slug);
+    const post = data.find(post => post.slug == req.params.slug);
 
     //for loop implementation
     /*
