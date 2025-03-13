@@ -16,6 +16,19 @@ router.get('/', (req, res) => {
 router.get('/:slug', (req, res) => {
     //res.send(`Showing post: ${req.params.slug}`);
     const post = data.filter(post => post.slug == req.params.slug);
+
+    //for loop implementation
+    /*
+    let post;
+    for(let i = 0; i < data.length; i++){
+        const reqPost = req.params.slug
+        if(data[i].slug == reqPost){
+            post = data[i];
+            break;
+        }
+    }
+    */
+
     res.json(post);
 });
 
