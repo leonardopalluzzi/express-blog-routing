@@ -14,7 +14,9 @@ router.get('/', (req, res) => {
 
 //show
 router.get('/:slug', (req, res) => {
-    res.send(`Showing post: ${req.params.slug}`);
+    //res.send(`Showing post: ${req.params.slug}`);
+    const post = data.filter(post => post.slug == req.params.slug);
+    res.json(post);
 });
 
 //store
